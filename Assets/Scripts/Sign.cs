@@ -1,45 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Sign : MonoBehaviour
 {
-
-    public GameObject dialogBox;
-    public Text dialogText;
     public string dialog;
-    public bool playerInRange;
-       
 
-    // Start is called before the first frame update
-    void Start()
+    private bool playerInRange;
+
+    private void Update()
     {
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
-            if(dialogBox.activeInHierarchy)
+            if (DialogManager.instance.dialogBox.activeInHierarchy)
             {
-                dialogBox.SetActive(false);
-            } else
+                DialogManager.instance.EndDialog();
+            }
+            else
             {
-                dialogBox.SetActive(true);
-                //dialogText.text = dialog;
-                dialogText.text = "Beginn der Waldprüfung. Vorsicht Gegner Voraus!";
+                DialogManager.instance.StartDialog(dialog);
             }
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             playerInRange = true;
         }
@@ -47,11 +33,10 @@ public class Sign : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            dialogBox.SetActive(false);
+            DialogManager.instance.EndDialog();
         }
     }
-
 }
