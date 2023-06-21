@@ -10,6 +10,8 @@ public class TrapShack : MonoBehaviour
 
     public GameObject enemyPrefab; // Das Prefab des Gegners, das du spawnen möchtest
     public int numberOfEnemies; // Die Anzahl der zu spawnenden Gegner
+    public float spawnRadius; // Der maximale Radius um das Objekt, in dem die Gegner spawnen sollen
+
 
 
     // Start is called before the first frame update
@@ -23,9 +25,6 @@ public class TrapShack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
-
-
-
             if (DialogManager.instance.dialogBox.activeInHierarchy)
             {
                 DialogManager.instance.EndDialog();
@@ -33,10 +32,11 @@ public class TrapShack : MonoBehaviour
             else
             {
                 DialogManager.instance.StartDialog(dialog);
-                SpawnEnemies();
+                SpawnEnemies(); // Rufe die Methode zum Spawnen der Gegner auf
             }
         }
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,12 +60,10 @@ public class TrapShack : MonoBehaviour
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            // Erzeuge eine Instanz des Gegner-Objekts
-            GameObject enemyInstance = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-
-            // Setze den Container als übergeordnetes Objekt des Gegners
-            enemyInstance.transform.SetParent(GameObject.Find("EnemyContainer").transform);
+            Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         }
     }
+
 
 }
