@@ -10,6 +10,7 @@ public class Inventory : ScriptableObject
     public List<Item> items = new List<Item>();
     public int numberOfKeys;
     public int coins;
+    public int forestExamKeys;
     //public float maxMagic = 10;
     //public float currentMagic;
 
