@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerState{
+    walk,
+    attack,
+    interact
+}
+
 public class PlayerMovement : MonoBehaviour
 {
+    private PlayerState currentState;
     public float MovementSpeed;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
-    private Animator myAnimator;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentState = PlayerState.walk;
         myRigidbody = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,18 +30,30 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        Debug.Log(change);
-        UpdateAnimationAndMove();
+        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack){
+            StartCoroutine(AttackCO());
+        }else if(currentState == PlayerState.walk){
+            UpdateAnimationAndMove();
+        }
+    }
+
+    private IEnumerator AttackCO(){
+        animator.SetBool("attacking", true);
+        currentState = PlayerState.attack;
+        yield return null;
+        animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(.7f);
+        currentState = PlayerState.walk;
     }
 
     void UpdateAnimationAndMove()
     {
         if(change != Vector3.zero){
             MoveCharacter();
-            myAnimator.SetFloat("MoveX", change.x);
-            myAnimator.SetFloat("MoveY", change.y);
-            myAnimator.SetBool("Moving", true);
-        }else myAnimator.SetBool("Moving", false);
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveY", change.y);
+            animator.SetBool("moving", true);
+        }else animator.SetBool("moving", false);
     }
 
     void MoveCharacter()
