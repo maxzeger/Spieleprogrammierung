@@ -10,6 +10,9 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogBox;
     public Text dialogText;
 
+    private List<string> dialogues;
+    private int currentDialogueIndex;
+
     private void Awake()
     {
         if (instance == null)
@@ -22,10 +25,25 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void StartDialog(string dialog)
+    public void StartDialog(List<string> dialogues)
     {
-        dialogBox.SetActive(true);
-        dialogText.text = dialog;
+        this.dialogues = dialogues;
+        currentDialogueIndex = 0;
+        ShowNextDialog();
+    }
+
+    public void ShowNextDialog()
+    {
+        if (currentDialogueIndex < dialogues.Count)
+        {
+            dialogBox.SetActive(true);
+            dialogText.text = dialogues[currentDialogueIndex];
+            currentDialogueIndex++;
+        }
+        else
+        {
+            EndDialog();
+        }
     }
 
     public void EndDialog()

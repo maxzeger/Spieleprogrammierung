@@ -10,9 +10,9 @@ public class ShackWithKey : Powerup
 
     public Inventory playerInventory;
 
-    public string dialog;
+    public List<string> dialogues;
 
-    public string dialog2;
+    public List<string> dialogues2;
 
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class ShackWithKey : Powerup
                 }
                 else
                 {
-                    DialogManager.instance.StartDialog(dialog2);
+                    DialogManager.instance.StartDialog(dialogues2);
                 }
 
             } else
@@ -42,7 +42,7 @@ public class ShackWithKey : Powerup
                 }
                 else
                 {
-                    DialogManager.instance.StartDialog(dialog);
+                    DialogManager.instance.StartDialog(dialogues);
                     playerInventory.forestExamKeys += 1;
                     powerupSignal.Raise();
                 }

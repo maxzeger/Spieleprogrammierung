@@ -6,7 +6,7 @@ public class TrapShack : MonoBehaviour
 {
 
     private bool playerInRange;
-    public string dialog;
+    public List<string> dialogues;
 
     public GameObject enemyPrefab; // Das Prefab des Gegners, das du spawnen möchtest
     public int numberOfEnemies; // Die Anzahl der zu spawnenden Gegner
@@ -31,7 +31,7 @@ public class TrapShack : MonoBehaviour
             }
             else
             {
-                DialogManager.instance.StartDialog(dialog);
+                DialogManager.instance.StartDialog(dialogues);
                 SpawnEnemies(); // Rufe die Methode zum Spawnen der Gegner auf
             }
         }

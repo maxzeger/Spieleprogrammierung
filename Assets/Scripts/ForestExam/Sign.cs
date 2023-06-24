@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sign : MonoBehaviour
 {
-    public string dialog;
+    public List<string> dialogues;
 
     private bool playerInRange;
 
@@ -14,11 +14,11 @@ public class Sign : MonoBehaviour
         {
             if (DialogManager.instance.dialogBox.activeInHierarchy)
             {
-                DialogManager.instance.EndDialog();
+                DialogManager.instance.ShowNextDialog();
             }
             else
             {
-                DialogManager.instance.StartDialog(dialog);
+                DialogManager.instance.StartDialog(dialogues);
             }
         }
     }
