@@ -5,8 +5,13 @@ using UnityEngine;
 public class TreeStump : MonoBehaviour
 {
     public Transform teleportPosition;
-
     private bool playerInRange;
+    private DialogManager dialogManager;
+
+    private void Start()
+    {
+        dialogManager = FindObjectOfType<DialogManager>();
+    }
 
     private void Update()
     {
@@ -38,7 +43,7 @@ public class TreeStump : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            DialogManager.instance.EndDialog();
+            dialogManager.EndDialog();
         }
     }
 }

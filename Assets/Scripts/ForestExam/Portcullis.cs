@@ -8,6 +8,12 @@ public class Portcullis : MonoBehaviour
     public Inventory playerInventory;
     public GameObject objectToDisable;
     public GameObject objectToDisable2;
+    private DialogManager dialogManager;
+
+    private void Start()
+    {
+        dialogManager = FindObjectOfType<DialogManager>();
+    }
 
     private void Update()
     {
@@ -35,7 +41,7 @@ public class Portcullis : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            DialogManager.instance.EndDialog();
+            dialogManager.EndDialog();
         }
     }
 }

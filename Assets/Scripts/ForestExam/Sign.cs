@@ -7,18 +7,24 @@ public class Sign : MonoBehaviour
     public List<string> dialogues;
 
     private bool playerInRange;
+    private DialogManager dialogManager;
+
+    private void Start()
+    {
+        dialogManager = FindObjectOfType<DialogManager>();
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
-            if (DialogManager.instance.dialogBox.activeInHierarchy)
+            if (dialogManager.dialogBox.activeInHierarchy)
             {
-                DialogManager.instance.ShowNextDialog();
+                dialogManager.ShowNextDialog();
             }
             else
             {
-                DialogManager.instance.StartDialog(dialogues);
+                dialogManager.StartDialog(dialogues);
             }
         }
     }
@@ -36,7 +42,7 @@ public class Sign : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            DialogManager.instance.EndDialog();
+            dialogManager.EndDialog();
         }
     }
 }

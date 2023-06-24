@@ -11,11 +11,14 @@ public class ShackWithKey : Powerup
     public Inventory playerInventory;
 
     public List<string> dialogues;
-
     public List<string> dialogues2;
+    private DialogManager dialogManager;
 
+    private void Start()
+    {
+        dialogManager = FindObjectOfType<DialogManager>();
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
@@ -25,24 +28,24 @@ public class ShackWithKey : Powerup
             if (hasPlayerInteragiat)
             {
 
-                if (DialogManager.instance.dialogBox.activeInHierarchy)
+                if (dialogManager.dialogBox.activeInHierarchy)
                 {
-                    DialogManager.instance.EndDialog();
+                    dialogManager.EndDialog();
                 }
                 else
                 {
-                    DialogManager.instance.StartDialog(dialogues2);
+                    dialogManager.StartDialog(dialogues2);
                 }
 
             } else
             {
-                if (DialogManager.instance.dialogBox.activeInHierarchy)
+                if (dialogManager.dialogBox.activeInHierarchy)
                 {
-                    DialogManager.instance.EndDialog();
+                    dialogManager.EndDialog();
                 }
                 else
                 {
-                    DialogManager.instance.StartDialog(dialogues);
+                    dialogManager.StartDialog(dialogues);
                     playerInventory.forestExamKeys += 1;
                     powerupSignal.Raise();
                 }
@@ -65,7 +68,7 @@ public class ShackWithKey : Powerup
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            DialogManager.instance.EndDialog();
+            dialogManager.EndDialog();
         }
     }
 

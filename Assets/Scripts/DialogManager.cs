@@ -5,25 +5,11 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public static DialogManager instance;
-
     public GameObject dialogBox;
     public Text dialogText;
 
     private List<string> dialogues;
     private int currentDialogueIndex;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void StartDialog(List<string> dialogues)
     {

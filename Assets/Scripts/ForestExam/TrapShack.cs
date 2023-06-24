@@ -7,6 +7,7 @@ public class TrapShack : MonoBehaviour
 
     private bool playerInRange;
     public List<string> dialogues;
+    private DialogManager dialogManager;
 
     public GameObject enemyPrefab; // Das Prefab des Gegners, das du spawnen möchtest
     public int numberOfEnemies; // Die Anzahl der zu spawnenden Gegner
@@ -14,24 +15,22 @@ public class TrapShack : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        dialogManager = FindObjectOfType<DialogManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
-            if (DialogManager.instance.dialogBox.activeInHierarchy)
+            if (dialogManager.dialogBox.activeInHierarchy)
             {
-                DialogManager.instance.EndDialog();
+                dialogManager.EndDialog();
             }
             else
             {
-                DialogManager.instance.StartDialog(dialogues);
+                dialogManager.StartDialog(dialogues);
                 SpawnEnemies(); // Rufe die Methode zum Spawnen der Gegner auf
             }
         }
@@ -52,7 +51,7 @@ public class TrapShack : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
-            DialogManager.instance.EndDialog();
+            dialogManager.EndDialog();
         }
     }
 
