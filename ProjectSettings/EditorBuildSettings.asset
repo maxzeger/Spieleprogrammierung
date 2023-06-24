@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/IceExam.unity
+    guid: 7ce68728951224f8eb574b83bdd76bd4
+  - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: 66cc4e903348246e99a2374da7744380
+  - enabled: 1
+    path: Assets/Scenes/FinalExam.unity
+    guid: 61804668e1078344b9352ea0efbc8c9e
+  - enabled: 1
+    path: Assets/Scenes/FireExam.unity
+    guid: 691ae98df34f9479c8a6a7aa80c652cd
+  - enabled: 1
+    path: Assets/Scenes/ForestExam.unity
+    guid: 4caac811e068441a0b144aa72940659c
   m_configObjects: {}
