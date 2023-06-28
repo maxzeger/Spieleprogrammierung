@@ -19,10 +19,15 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;
     private bool invincible;
 
+    public GameObject dropCoin; // Das Objekt, das mehrmals abgelegt werden soll
+    public int dropCount; // Anzahl der abzulegenden Objekte
+    public float spawnRadius;
+
     private void TakeDamage(float damage){
         if(!invincible){
             health -= damage;
             if(health <= 0){
+                DropItems();
                 this.gameObject.SetActive(false);
             }
             invincible = true;
@@ -53,5 +58,15 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void DropItems()
+    {
+        for (int i = 0; i < dropCount; i++)
+        {
+            Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
+            Instantiate(dropCoin, spawnPosition, Quaternion.identity);
+        }
+
     }
 }
