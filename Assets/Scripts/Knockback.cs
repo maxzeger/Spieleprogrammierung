@@ -7,12 +7,13 @@ public class Knockback : MonoBehaviour
 
     public float thrust;
     public float knockTime;
-    public float damage;
+    private float damage = 1;
+    public Inventory playerInventory;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+ 
     }
 
     // Update is called once per frame
@@ -32,12 +33,12 @@ public class Knockback : MonoBehaviour
                 
                 if(other.gameObject.CompareTag("enemy")){
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                    other.GetComponent<Enemy>().Knock(hit, knockTime, damage);
+                    other.GetComponent<Enemy>().Knock(hit, knockTime, playerInventory.damage);
                 }
                 if(other.gameObject.CompareTag("Player") && hit.GetComponent<PlayerMovement>().currentState != PlayerState.stagger){
                     hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
                     other.GetComponent<PlayerMovement>().Knock(knockTime);
-                    other.GetComponent<PlayerHealth>().hit(damage);
+                    other.GetComponent<PlayerHealth>().hit(playerInventory.damage);
                 }
                 
             }
