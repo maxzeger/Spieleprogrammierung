@@ -7,9 +7,19 @@ public class Attack : MonoBehaviour
     private bool playerInRange;
     public Inventory playerInventory;
 
+
+    public List<string> dialogues;
+    public List<string> dialogues2;
+    private DialogManager dialogManager;
+
+    private CoinTextManager coinObject;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        dialogManager = FindObjectOfType<DialogManager>();
+        coinObject = FindObjectOfType<CoinTextManager>();
     }
 
     // Update is called once per frame
@@ -17,7 +27,37 @@ public class Attack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
-            playerInventory.damage += 1;
+
+
+            if (playerInventory.coins < 3 * playerInventory.damage)
+            {
+
+                if (dialogManager.dialogBox.activeInHierarchy)
+                {
+                    dialogManager.EndDialog();
+                }
+                else
+                {
+                    dialogManager.StartDialog(dialogues2);
+                }
+
+            }
+            else
+            {
+                if (dialogManager.dialogBox.activeInHierarchy)
+                {
+                    dialogManager.EndDialog();
+                }
+                else
+                {
+                    dialogManager.StartDialog(dialogues);
+                    playerInventory.coins -= 3 * (int)playerInventory.damage;
+                    playerInventory.damage += 1;
+                    coinObject.UpdateCoinCount();
+                }
+
+
+            }
         }
     }
 
@@ -34,6 +74,7 @@ public class Attack : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+            dialogManager.EndDialog();
         }
     }
 }

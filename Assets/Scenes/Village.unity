@@ -17450,6 +17450,7 @@ GameObject:
   - component: {fileID: 1189896682}
   - component: {fileID: 1189896681}
   - component: {fileID: 1189896683}
+  - component: {fileID: 1189896684}
   m_Layer: 0
   m_Name: Blacksmith (Attack)
   m_TagString: Untagged
@@ -17589,6 +17590,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
+  dialogues:
+  - Dein Schwert wurde verbessert
+  dialogues2:
+  - Kein Geld
+--- !u!114 &1189896684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189896678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e2a0cdd02f54dc0b4e19bf978237cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 331753691}
+  dialogText: {fileID: 1973880318}
 --- !u!1 &1328457111
 GameObject:
   m_ObjectHideFlags: 0
@@ -18767,9 +18786,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
   dialogues:
-  - Geklappt
+  - "R\xFCstung wurde verbessert"
   dialogues2:
-  - Kein Geld
+  - "Du hast nicht gen\xFCgend Geld f\xFCr das Upgrade"
 --- !u!114 &1643133780
 MonoBehaviour:
   m_ObjectHideFlags: 0
