@@ -2740,6 +2740,7 @@ SpriteAtlas:
   - {fileID: 21300046, guid: a07735877a3bd644094331b137b71878, type: 3}
   - {fileID: 21300040, guid: a07735877a3bd644094331b137b71878, type: 3}
   - {fileID: 21300042, guid: a07735877a3bd644094331b137b71878, type: 3}
+  - {fileID: 21300000, guid: 7680d78797ee5421f8684baf2d1f6361, type: 3}
   - {fileID: 21300000, guid: 839cfae71949612469cf64781bd2fc22, type: 3}
   - {fileID: 21300000, guid: 65e5eb089d133e24dada201aa3cd9aec, type: 3}
   - {fileID: 202658453, guid: 9e3324389270aa14fa093a93aae81561, type: 3}
@@ -6588,6 +6589,7 @@ SpriteAtlas:
   - TX Tileset Stone Ground_23
   - TX Tileset Stone Ground_20
   - TX Tileset Stone Ground_21
+  - heart pixel art 254x254
   - male_hurt
   - cementstair
   - TilesB_1
