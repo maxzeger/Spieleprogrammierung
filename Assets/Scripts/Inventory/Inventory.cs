@@ -11,6 +11,7 @@ public class Inventory : ScriptableObject
     public int numberOfKeys;
     public int coins;
     public int forestExamKeys;
+    public float hearts = 3;
     //public float maxMagic = 10;
     //public float currentMagic;
 
