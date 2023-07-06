@@ -6,11 +6,13 @@ public class Defense : MonoBehaviour
 {
 
     private bool playerInRange;
+    private PlayerHealth playerHealthObject;
+    public Inventory playerInventory;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerHealthObject = FindObjectOfType<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -18,7 +20,8 @@ public class Defense : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
-            
+            playerInventory.hearts += 1;
+            playerHealthObject.setHearts();
         }
     }
 

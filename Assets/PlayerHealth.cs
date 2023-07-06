@@ -17,6 +17,12 @@ public class PlayerHealth : MonoBehaviour
     {
         Health = playerInventory.hearts;
         Debug.Log(Health);
+
+        for (int i = 0; i < 10; i++)
+        {
+            hearts[i].SetActive(true);
+        }
+
         for (int i = (int)Health; i < 10; i++)
         {
             hearts[i].SetActive(false);
