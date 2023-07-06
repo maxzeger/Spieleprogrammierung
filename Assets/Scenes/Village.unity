@@ -15718,6 +15718,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &331753691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6691612171517279713, guid: 83d4d78aac6fc4263a98779fc9b2044f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3238149747507993485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456811577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4836251224633068467, guid: 83d4d78aac6fc4263a98779fc9b2044f,
@@ -18620,6 +18626,7 @@ GameObject:
   - component: {fileID: 1643133776}
   - component: {fileID: 1643133775}
   - component: {fileID: 1643133779}
+  - component: {fileID: 1643133780}
   m_Layer: 0
   m_Name: Blacksmith (Defense)
   m_TagString: Untagged
@@ -18759,6 +18766,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
+  dialogues:
+  - Geklappt
+  dialogues2:
+  - Kein Geld
+--- !u!114 &1643133780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643133774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e2a0cdd02f54dc0b4e19bf978237cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 331753691}
+  dialogText: {fileID: 1973880318}
 --- !u!1 &1859080981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4836251224866759394, guid: 83d4d78aac6fc4263a98779fc9b2044f,
@@ -20330,6 +20355,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!114 &1973880318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7976160760932012899, guid: 83d4d78aac6fc4263a98779fc9b2044f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3238149747507993485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2087428391
 GameObject:
   m_ObjectHideFlags: 0
