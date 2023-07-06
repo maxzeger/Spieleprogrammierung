@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 28ebf727ff5424406bdb9d4e97884dff
+  - enabled: 1
     path: Assets/Scenes/IceExam.unity
     guid: 7ce68728951224f8eb574b83bdd76bd4
   - enabled: 1
