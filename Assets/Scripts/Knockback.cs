@@ -11,6 +11,7 @@ public class Knockback : MonoBehaviour
     private float playerDamage = 1;
     public float enemyDamage;
     public AudioClip swordSound;
+    public AudioClip enemySound;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class Knockback : MonoBehaviour
                     hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
                     other.GetComponent<PlayerMovement>().Knock(knockTime);
                     other.GetComponent<PlayerHealth>().hit(enemyDamage);
+                    AudioSource.PlayClipAtPoint(enemySound, transform.position);
                 }
                 
             }
