@@ -10,6 +10,8 @@ public class Goblin : Enemy
     public float attackRadius;
     public Transform homePosition;
     public Animator anim;
+    public bool isGoblinChief = false;
+    public Inventory playerInventory;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +68,15 @@ public class Goblin : Enemy
     private void ChangeState(EnemyState newState){
         if(currentState != newState){
             currentState = newState;
+        }
+
+    }
+
+    private void OnDestroy()
+    {
+        if(isGoblinChief)
+        {
+            playerInventory.forestExamKeys += 1;
         }
     }
 }
