@@ -11,9 +11,14 @@ GameObject:
   - component: {fileID: 4249365177452016386}
   - component: {fileID: 4249365177452016509}
   - component: {fileID: 4249365177452016508}
+  - component: {fileID: 1792784535863014664}
+  - component: {fileID: 2015133537628968766}
+  - component: {fileID: 3405151066397442112}
+  - component: {fileID: 968036308295052630}
+  - component: {fileID: 6351351110213797949}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -787154799
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1873134086, guid: 0657785690620424cb8748bafe858c70, type: 3}
+  m_Sprite: {fileID: 1951613049, guid: 0657785690620424cb8748bafe858c70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 4249365177452016511}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ea5d118bfa614607ad0d92e9c0499a1, type: 2}
+  m_Controller: {fileID: 9100000, guid: da20ce4bae2a14d0386e8deefeb22adb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -106,3 +111,119 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &1792784535863014664
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249365177452016511}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &2015133537628968766
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249365177452016511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04756093, y: -0.30338883}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.796875, y: 0.921875}
+    newSize: {x: 0.671875, y: 0.921875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.44809866, y: 0.31509733}
+  m_EdgeRadius: 0
+--- !u!61 &3405151066397442112
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249365177452016511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.057111055, y: -0.0031291842}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.796875, y: 0.921875}
+    newSize: {x: 0.671875, y: 0.921875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8728953, y: 1.0782505}
+  m_EdgeRadius: 0
+--- !u!114 &968036308295052630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249365177452016511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab0bfd1840434c378a9596f0bdab506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  maxHealth: {fileID: 11400000, guid: d328f7635ff7849d196c2b3178e63af3, type: 2}
+  health: 0
+  enemyName: Golem
+  baseAttack: 3
+  moveSpeed: 3
+  dropCoin: {fileID: 1907060386625963557, guid: ae4ded6a5ed74431d998845279acef49,
+    type: 3}
+  dropCount: 15
+  spawnRadius: 4
+  target: {fileID: 0}
+  chaseRadius: 20
+  attackRadius: 1
+  homePosition: {fileID: 0}
+  anim: {fileID: 0}
+--- !u!114 &6351351110213797949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249365177452016511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00c7c9adf9ad53409adc145e6311154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 7
+  knockTime: 0.3
+  playerInventory: {fileID: 0}
+  damage: 1

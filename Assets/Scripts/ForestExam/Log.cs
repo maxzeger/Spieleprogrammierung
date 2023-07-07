@@ -31,7 +31,7 @@ public class Log : Enemy
         if(Vector3.Distance(target.position, transform.position) <= chaseRadius
             && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-            if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger){
+            if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger && currentState != EnemyState.dead){
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
                 changeAnim(temp - transform.position);

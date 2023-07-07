@@ -8,7 +8,7 @@ public class Knockback : MonoBehaviour
     public float thrust;
     public float knockTime;
     public Inventory playerInventory;
-    private float damage = 1;
+    public float damage = 1;
 
     // Start is called before the first frame update
     void Start()

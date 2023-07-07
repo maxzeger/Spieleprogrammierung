@@ -6,7 +6,8 @@ using UnityEngine;
         idle,
         walk,
         attack,
-        stagger
+        stagger,
+        dead
 }
 
 public class Enemy : MonoBehaviour
@@ -23,12 +24,14 @@ public class Enemy : MonoBehaviour
     public int dropCount; // Anzahl der abzulegenden Objekte
     public float spawnRadius;
 
-    private void TakeDamage(float damage){
+    private void TakeDamage(Rigidbody2D myRigidbody, float damage){
         if(!invincible){
             health -= damage;
             if(health <= 0){
-                DropItems();
-                this.gameObject.SetActive(false);
+                myRigidbody.velocity = Vector2.zero;
+                myRigidbody.isKinematic = true;
+                currentState = EnemyState.dead;
+                StartCoroutine(DeathCo(myRigidbody));
             }
             invincible = true;
         }
@@ -37,14 +40,23 @@ public class Enemy : MonoBehaviour
 
     public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage){
         StartCoroutine(KnockCo(myRigidbody, knockTime));
-        TakeDamage(damage);
+        TakeDamage(myRigidbody, damage);
+    }
+
+    private IEnumerator DeathCo(Rigidbody2D myRigidbody){
+        GetComponent<Animator>().SetBool("dead", true);
+        DropItems();
+        yield return new WaitForSeconds(1);
+        Destroy(this.gameObject);
     }
 
     private IEnumerator KnockCo(Rigidbody2D myRigidbody, float knockTime){
         if(myRigidbody != null){
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
-            currentState = EnemyState.idle;
+            if(currentState != EnemyState.dead){
+                currentState = EnemyState.idle;
+            }
             invincible = false;
         }
     }
