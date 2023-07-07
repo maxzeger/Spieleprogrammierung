@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebaa6a2697f8c084fa996e5aa9675258, type: 3}
   m_Name: GolemHealth
   m_EditorClassIdentifier: 
-  initialValue: 20
+  initialValue: 1
