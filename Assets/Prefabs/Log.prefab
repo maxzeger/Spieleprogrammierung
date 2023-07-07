@@ -225,4 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.3
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
+  enemyDamage: 1
+  swordSound: {fileID: 0}
+  enemySound: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}

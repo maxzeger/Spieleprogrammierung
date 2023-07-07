@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupSignal: {fileID: 11400000, guid: 11895f610b36c433a9b9ee1069afb395, type: 2}
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
+  coinSound: {fileID: 8300000, guid: 95c30892f13a1444fb7477d5d6fa81dc, type: 3}

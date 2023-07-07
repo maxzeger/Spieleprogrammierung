@@ -2867,6 +2867,7 @@ SpriteAtlas:
   - {fileID: 21300040, guid: 8501e10b1eafde34586080ba342fdc0e, type: 3}
   - {fileID: 21300088, guid: 8501e10b1eafde34586080ba342fdc0e, type: 3}
   - {fileID: 21300092, guid: 8501e10b1eafde34586080ba342fdc0e, type: 3}
+  - {fileID: 21300000, guid: 42d8981b5a1374485a23c15421bfa3af, type: 3}
   - {fileID: 21300000, guid: fede6d1bcac7444f3991d73953c14cb5, type: 3}
   - {fileID: 21300000, guid: 712c983b786c336479ca604180d301f0, type: 3}
   - {fileID: 21300000, guid: 3fdd2c4b770a54ddeba652b34d01d269, type: 3}
@@ -7148,6 +7149,7 @@ SpriteAtlas:
   - TX Shadow Bush T6
   - TX Shadow Bush T5
   - TX Shadow Bush T4
+  - Startbildschirm
   - walk - vanilla
   - cover
   - NPC_test
