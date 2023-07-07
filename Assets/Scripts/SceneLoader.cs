@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string sceneName; // Name der Szene, in die du wechseln möchtest
+    public string sceneName;
 
     void OnTriggerEnter2D(Collider2D other)
     {

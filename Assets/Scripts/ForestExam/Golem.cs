@@ -11,6 +11,8 @@ public class Golem : Enemy
     public Transform homePosition;
     public Animator anim;
 
+    public GameObject SceneSwitcher;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,9 @@ public class Golem : Enemy
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
-        
+        SceneSwitcher.SetActive(false);
+
+
     }
 
     // Update is called once per frame
@@ -68,4 +72,16 @@ public class Golem : Enemy
             currentState = newState;
         }
     }
+
+    private void UpdateObjectVisibility()
+    {
+        Debug.Log("tesst");
+        SceneSwitcher.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        UpdateObjectVisibility();
+    }
+
 }
