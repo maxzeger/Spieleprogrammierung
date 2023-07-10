@@ -33,6 +33,7 @@ public class Goblin : Enemy
         if(Vector3.Distance(target.position, transform.position) <= chaseRadius
             && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
+            anim.SetBool("moving", true);
             if(currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger && currentState != EnemyState.dead){
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
@@ -40,7 +41,13 @@ public class Goblin : Enemy
                 myRigidbody.MovePosition(temp);
                 ChangeState(EnemyState.walk);
             }
-            
+        } else {
+            anim.SetBool("moving", false);
+        }
+
+        if(currentState == EnemyState.attack){
+            currentState = EnemyState.idle;
+            anim.SetTrigger("attacking");
         }
     }
 

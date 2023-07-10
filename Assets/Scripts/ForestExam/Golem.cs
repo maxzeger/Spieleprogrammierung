@@ -44,6 +44,10 @@ public class Golem : Enemy
             }
             
         }
+        if(currentState == EnemyState.attack){
+            currentState = EnemyState.idle;
+            anim.SetTrigger("attacking");
+        }
     }
 
     private void SetAnimFloat(Vector2 setVector){

@@ -42,6 +42,7 @@ public class Knockback : MonoBehaviour
                     AudioSource.PlayClipAtPoint(swordSound, transform.position);
                 }
                 if(other.gameObject.CompareTag("Player") && hit.GetComponent<PlayerMovement>().currentState != PlayerState.stagger){
+                    GetComponent<Enemy>().currentState = EnemyState.attack;
                     hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
                     other.GetComponent<PlayerMovement>().Knock(knockTime);
                     other.GetComponent<PlayerHealth>().hit(enemyDamage);

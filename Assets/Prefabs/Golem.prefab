@@ -211,6 +211,7 @@ MonoBehaviour:
   attackRadius: 1
   homePosition: {fileID: 0}
   anim: {fileID: 0}
+  SceneSwitcher: {fileID: 0}
 --- !u!114 &6351351110213797949
 MonoBehaviour:
   m_ObjectHideFlags: 0
