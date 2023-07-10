@@ -128,7 +128,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
   enemyDamage: 4
   swordSound: {fileID: 0}
-  enemySound: {fileID: 0}
+  enemySound: {fileID: 8300000, guid: fd25a15f9797641458336cccfb445343, type: 3}
 --- !u!50 &572126259009999593
 Rigidbody2D:
   serializedVersion: 4
@@ -218,7 +218,7 @@ MonoBehaviour:
   maxHealth: {fileID: 11400000, guid: d328f7635ff7849d196c2b3178e63af3, type: 2}
   health: 0
   enemyName: Dragon
-  baseAttack: 4
+  baseAttack: 1
   moveSpeed: 3
   dropCoin: {fileID: 0}
   dropCount: 25
