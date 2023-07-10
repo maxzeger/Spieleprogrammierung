@@ -29,7 +29,7 @@ public class Attack : MonoBehaviour
         {
 
 
-            if (playerInventory.coins < 3 * playerInventory.damage)
+            if (playerInventory.coins < 10 * playerInventory.damage)
             {
 
                 if (dialogManager.dialogBox.activeInHierarchy)
@@ -51,7 +51,7 @@ public class Attack : MonoBehaviour
                 else
                 {
                     dialogManager.StartDialog(dialogues);
-                    playerInventory.coins -= 3 * (int)playerInventory.damage;
+                    playerInventory.coins -= 10 * (int)playerInventory.damage;
                     playerInventory.damage += 1;
                     coinObject.UpdateCoinCount();
                 }

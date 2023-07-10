@@ -10,6 +10,7 @@ public class Golem : Enemy
     public float attackRadius;
     public Transform homePosition;
     public Animator anim;
+    public Inventory inventory;
 
     public GameObject SceneSwitcher;
 
@@ -79,12 +80,12 @@ public class Golem : Enemy
 
     private void UpdateObjectVisibility()
     {
-        Debug.Log("tesst");
         SceneSwitcher.SetActive(true);
     }
 
     private void OnDestroy()
     {
+        inventory.EndExamKeys += 1;
         UpdateObjectVisibility();
     }
 
