@@ -29,7 +29,7 @@ public class Defense : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
 
-            if (playerInventory.coins < 3 * playerInventory.hearts)
+            if (playerInventory.coins < 5 * playerInventory.hearts)
             {
 
                 if (dialogManager.dialogBox.activeInHierarchy)
@@ -51,7 +51,7 @@ public class Defense : MonoBehaviour
                 else
                 {
                     dialogManager.StartDialog(dialogues);
-                    playerInventory.coins -= 3 * (int)playerInventory.hearts;
+                    playerInventory.coins -= 5 * (int)playerInventory.hearts;
                     playerInventory.hearts += 1;
                     playerHealthObject.setHearts();
                     coinObject.UpdateCoinCount();

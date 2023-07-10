@@ -15,8 +15,8 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   items: []
   numberOfKeys: 0
-  coins: 163
-  forestExamKeys: 15
+  coins: 250
+  forestExamKeys: 0
   EndExamKeys: 0
-  hearts: 8
-  damage: 3
+  hearts: 3
+  damage: 1

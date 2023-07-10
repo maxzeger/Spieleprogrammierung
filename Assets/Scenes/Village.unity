@@ -15812,6 +15812,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
+        type: 3}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
+        type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: "Hier wird deine R\xFCstung verbessert (Ein Herz mehr)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
+        type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: 'Die Kosten:  Herzanzahl * 5 Coins'
+      objectReference: {fileID: 0}
     - target: {fileID: 2108716572730728963, guid: d77475a42e1c3492bada0edffab8ef47,
         type: 3}
       propertyPath: continueR
@@ -17529,6 +17544,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
+        type: 3}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
+        type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: Hier wird dein Schwert verbessert (Angriff steigt)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
+        type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: 'Die Kosten: Angirff Level * 10'
+      objectReference: {fileID: 0}
     - target: {fileID: 2108716572730728963, guid: d77475a42e1c3492bada0edffab8ef47,
         type: 3}
       propertyPath: continueR
@@ -19009,6 +19039,8 @@ GameObject:
   - component: {fileID: 1921583490}
   - component: {fileID: 1921583489}
   - component: {fileID: 1921583488}
+  - component: {fileID: 1921583493}
+  - component: {fileID: 1921583492}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -19135,6 +19167,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921583492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921583487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e2a0cdd02f54dc0b4e19bf978237cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBox: {fileID: 331753691}
+  dialogText: {fileID: 1973880318}
+--- !u!114 &1921583493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921583487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18104ceb906414fb3a152a693c7b8238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - "K\xF6nig: Willkommen, junger Held! Ich f\xFCrchte, unser friedliches Dorf ist
+    in gro\xDFer Gefahr. Ein furchteinfl\xF6\xDFender B\xF6sewicht ist \xFCber uns
+    hergefallen und hat Unheil angerichtet."
+  - 'Spieler: Eure Hoheit, was ist geschehen?'
+  - "K\xF6nig: Du musst dich zuerst auf eine gef\xE4hrliche Reise begeben, um zum
+    Versteck des B\xF6sewichts zu gelangen. Zwei herausfordernde Level stehen dir
+    bevor, in denen du deine F\xE4higkeiten verbessern und deine St\xE4rke beweisen
+    musst. "
+  - "K\xF6nig: Bist du bereit, dich diesen Pr\xFCfungen zu stellen?"
+  - 'Spieler: Ja, Eure Hoheit! Ich werde mich den Herausforderungen stellen und die
+    Prinzessin befreien!'
+  - "K\xF6nig: Gut gesprochen, junger Held! Die erste Pr\xFCfung erwartet dich im
+    Wald. Dort wirst du auf gef\xE4hrliche Kreaturen und t\xFCckische Hindernisse
+    sto\xDFen. Gehe mit Mut und Entschlossenheit voran, und m\xF6ge das Gl\xFCck
+    auf deiner Seite sein!"
+  - "Spieler: Ich werde euch nicht entt\xE4uschen, Eure Hoheit! Ich werde die Prinzessin
+    retten und das Dorf von dieser Bedrohung befreien!"
+  - "K\xF6nig: Das h\xF6re ich gerne, mein tapferer J\xFCngling! M\xF6ge das Schicksal
+    dir wohlgesonnen sein. Reise nun in den Dunklen Wald und bestehe die erste Herausforderung.
+    Ich stehe hinter dir und bete f\xFCr deinen Erfolg!"
 --- !u!1 &1932358401
 GameObject:
   m_ObjectHideFlags: 0
@@ -51578,12 +51657,12 @@ PrefabInstance:
     - target: {fileID: 1319796397374260680, guid: b6dd5d99304cd234880b8a8ee9973255,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: 1319796397374260680, guid: b6dd5d99304cd234880b8a8ee9973255,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9
+      value: -5.62
       objectReference: {fileID: 0}
     - target: {fileID: 1319796397374260680, guid: b6dd5d99304cd234880b8a8ee9973255,
         type: 3}
@@ -51809,20 +51888,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5831429702824702177, guid: 83d4d78aac6fc4263a98779fc9b2044f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6691612171517279713, guid: 83d4d78aac6fc4263a98779fc9b2044f,
+    - target: {fileID: 3995405723442699118, guid: 83d4d78aac6fc4263a98779fc9b2044f,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5831429702824702177, guid: 83d4d78aac6fc4263a98779fc9b2044f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691612171517279713, guid: 83d4d78aac6fc4263a98779fc9b2044f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8532458533732081871, guid: 83d4d78aac6fc4263a98779fc9b2044f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564816203249935606, guid: 83d4d78aac6fc4263a98779fc9b2044f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d4d78aac6fc4263a98779fc9b2044f, type: 3}
