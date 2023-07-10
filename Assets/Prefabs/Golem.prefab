@@ -211,6 +211,7 @@ MonoBehaviour:
   attackRadius: 1
   homePosition: {fileID: 0}
   anim: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
   SceneSwitcher: {fileID: 0}
 --- !u!114 &6351351110213797949
 MonoBehaviour:
