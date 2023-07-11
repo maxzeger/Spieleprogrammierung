@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -32,8 +33,9 @@ public class PlayerHealth : MonoBehaviour
     public void hit(float damage){
         Health = Health - damage;
         if(Health <= 0){
-            Destroy(gameObject);
-        }else{
+            SceneManager.LoadScene("Menu");
+        }
+        else{
             for(int i = (int) Health; i<10; i++){
                 hearts[i].SetActive(false);
             }
