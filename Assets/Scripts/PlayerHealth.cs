@@ -31,9 +31,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void hit(float damage){
         Health = Health - damage;
-        hearts[(int) Health].SetActive(false);
         if(Health <= 0){
             Destroy(gameObject);
+        }else{
+            for(int i = (int) Health; i<10; i++){
+                hearts[i].SetActive(false);
+            }
         }
+        
     }
 }

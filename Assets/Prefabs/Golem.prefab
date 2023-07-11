@@ -228,6 +228,7 @@ MonoBehaviour:
   thrust: 7
   knockTime: 0.3
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
-  enemyDamage: 1
+  enemyDamage: 3
   swordSound: {fileID: 0}
   enemySound: {fileID: 8300000, guid: b7f8695cf65a4f24eb37544298821146, type: 3}
+  isSpell: 0

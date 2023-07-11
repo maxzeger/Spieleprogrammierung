@@ -27,14 +27,19 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update(){
+        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger){
+            StartCoroutine(AttackCO());
+        }
+    }
+    void FixedUpdate()
     {
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger){
-            StartCoroutine(AttackCO());
-        }else if(currentState == PlayerState.walk || currentState == PlayerState.idle){
+        if(currentState == PlayerState.walk || currentState == PlayerState.idle){
+            myRigidbody.velocity = Vector2.zero;
+
             UpdateAnimationAndMove();
         }
     }
@@ -68,10 +73,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("moveY", change.y);
             animator.SetBool("moving", true);
         }else animator.SetBool("moving", false);
+
     }
 
     void MoveCharacter()
     {
+        Debug.Log(change);
+
         myRigidbody.MovePosition(
             transform.position + change * MovementSpeed * Time.deltaTime
         );

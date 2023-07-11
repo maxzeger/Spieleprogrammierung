@@ -222,10 +222,11 @@ MonoBehaviour:
   moveSpeed: 3
   dropCoin: {fileID: 1907060386625963557, guid: ae4ded6a5ed74431d998845279acef49,
     type: 3}
-  dropCount: 25
+  dropCount: 50
   spawnRadius: 5
   target: {fileID: 0}
-  chaseRadius: 5
+  chaseRadius: 10
   attackRadius: 0.7
   homePosition: {fileID: 0}
   inventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
+  SceneSwitcher: {fileID: 0}

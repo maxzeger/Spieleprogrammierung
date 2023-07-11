@@ -36,7 +36,7 @@ public class Dragon : Enemy
             && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
             anim.SetBool("moving", true);
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger && currentState != EnemyState.dead)
+            if (currentState == EnemyState.idle || currentState == EnemyState.walk)
             {
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 

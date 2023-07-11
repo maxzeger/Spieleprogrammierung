@@ -18,29 +18,30 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
-    private bool invincible;
+    public bool invincible;
 
     public GameObject dropCoin; // Das Objekt, das mehrmals abgelegt werden soll
     public int dropCount; // Anzahl der abzulegenden Objekte
     public float spawnRadius;
 
     private void TakeDamage(Rigidbody2D myRigidbody, float damage){
-        if(!invincible){
-            health -= damage;
-            if(health <= 0){
-                myRigidbody.velocity = Vector2.zero;
-                myRigidbody.isKinematic = true;
-                currentState = EnemyState.dead;
-                StartCoroutine(DeathCo(myRigidbody));
-            }
-            invincible = true;
+        health -= damage;
+        if(health <= 0){
+            myRigidbody.velocity = Vector2.zero;
+            myRigidbody.isKinematic = true;
+            currentState = EnemyState.dead;
+            StartCoroutine(DeathCo(myRigidbody));
         }
+        invincible = true;
+        
 
     }
 
     public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage){
-        StartCoroutine(KnockCo(myRigidbody, knockTime));
-        TakeDamage(myRigidbody, damage);
+        if(!invincible){
+            StartCoroutine(KnockCo(myRigidbody, knockTime));
+            TakeDamage(myRigidbody, damage);
+        }
     }
 
     private IEnumerator DeathCo(Rigidbody2D myRigidbody){

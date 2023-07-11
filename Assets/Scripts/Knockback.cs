@@ -12,6 +12,7 @@ public class Knockback : MonoBehaviour
     public float enemyDamage;
     public AudioClip swordSound;
     public AudioClip enemySound;
+    public bool isSpell;
 
     // Start is called before the first frame update
     void Start()
@@ -28,21 +29,22 @@ public class Knockback : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
 
         
-        if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player")){
+        if ((other.gameObject.CompareTag("enemy") && !isSpell) || other.gameObject.CompareTag("Player")){
             Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
             if(hit != null){
 
                 Vector2 difference = hit.transform.position - transform.position;
                 difference = difference.normalized * thrust;
-                hit.AddForce(difference, ForceMode2D.Impulse);
                 
-                if(other.gameObject.CompareTag("enemy")){
+                if(other.gameObject.CompareTag("enemy") && !isSpell && !hit.GetComponent<Enemy>().invincible){
+                    hit.AddForce(difference, ForceMode2D.Impulse);
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     other.GetComponent<Enemy>().Knock(hit, knockTime, playerDamage);
                     AudioSource.PlayClipAtPoint(swordSound, transform.position);
                 }
                 if(other.gameObject.CompareTag("Player") && hit.GetComponent<PlayerMovement>().currentState != PlayerState.stagger){
-                    GetComponent<Enemy>().currentState = EnemyState.attack;
+                    hit.AddForce(difference, ForceMode2D.Impulse);
+                    if(!isSpell) GetComponent<Enemy>().currentState = EnemyState.attack;
                     hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
                     other.GetComponent<PlayerMovement>().Knock(knockTime);
                     other.GetComponent<PlayerHealth>().hit(enemyDamage);
