@@ -171,11 +171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: {fileID: 11400000, guid: 13d5cd94941c7184fa61ed8e142ca20e, type: 2}
+  maxHealth: {fileID: 11400000, guid: 8719e11e4350949a3a584fdd91c6d47b, type: 2}
   health: 0
   enemyName: Goblin
   baseAttack: 2
   moveSpeed: 1
+  invincible: 0
   dropCoin: {fileID: 1907060386625963557, guid: ae4ded6a5ed74431d998845279acef49,
     type: 3}
   dropCount: 3
@@ -231,3 +232,4 @@ MonoBehaviour:
   enemyDamage: 1
   swordSound: {fileID: 0}
   enemySound: {fileID: 8300000, guid: 56703418e3aed4c47a5f6622816b8e41, type: 3}
+  isSpell: 0

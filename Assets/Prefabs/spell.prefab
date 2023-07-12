@@ -258,5 +258,5 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
   enemyDamage: 4
   swordSound: {fileID: 0}
-  enemySound: {fileID: 0}
+  enemySound: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
   isSpell: 1

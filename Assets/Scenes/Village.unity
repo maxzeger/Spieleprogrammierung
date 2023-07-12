@@ -15820,7 +15820,8 @@ PrefabInstance:
     - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
         type: 3}
       propertyPath: dialogues.Array.data[0]
-      value: "Hier wird deine R\xFCstung verbessert (Ein Herz mehr)"
+      value: "Hier wird deine R\xFCstung verbessert (Ein Herz mehr). Maximal 10 Herzen
+        sind zu kaufen."
       objectReference: {fileID: 0}
     - target: {fileID: 2108716572730728962, guid: d77475a42e1c3492bada0edffab8ef47,
         type: 3}
@@ -17811,7 +17812,7 @@ MonoBehaviour:
   dialogues:
   - Dein Schwert wurde verbessert
   dialogues2:
-  - Kein Geld
+  - "Nicht genug Geld f\xFCr diese Verbesserung!"
 --- !u!114 &1189896684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19006,7 +19007,7 @@ MonoBehaviour:
   dialogues:
   - "R\xFCstung wurde verbessert"
   dialogues2:
-  - "Du hast nicht gen\xFCgend Geld f\xFCr das Upgrade"
+  - "Nicht genug Geld f\xFCr diese Verbesserung!"
 --- !u!114 &1643133780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51762,7 +51763,7 @@ PrefabInstance:
     - target: {fileID: 1319796397374260692, guid: b6dd5d99304cd234880b8a8ee9973255,
         type: 3}
       propertyPath: MovementSpeed
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1319796397404428109, guid: b6dd5d99304cd234880b8a8ee9973255,
         type: 3}

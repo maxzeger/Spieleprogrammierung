@@ -126,9 +126,10 @@ MonoBehaviour:
   thrust: 10
   knockTime: 0.4
   playerInventory: {fileID: 11400000, guid: 52eb4439f1fb44f2e9f890fb55ae3d91, type: 2}
-  enemyDamage: 4
+  enemyDamage: 3
   swordSound: {fileID: 0}
   enemySound: {fileID: 8300000, guid: fd25a15f9797641458336cccfb445343, type: 3}
+  isSpell: 0
 --- !u!50 &572126259009999593
 Rigidbody2D:
   serializedVersion: 4
@@ -220,6 +221,7 @@ MonoBehaviour:
   enemyName: Dragon
   baseAttack: 1
   moveSpeed: 3
+  invincible: 0
   dropCoin: {fileID: 1907060386625963557, guid: ae4ded6a5ed74431d998845279acef49,
     type: 3}
   dropCount: 50

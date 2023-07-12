@@ -29,7 +29,7 @@ public class Defense : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && playerInRange)
         {
 
-            if (playerInventory.coins < 5 * playerInventory.hearts)
+            if (playerInventory.coins < 5 * playerInventory.hearts && playerInventory.hearts < 10)
             {
 
                 if (dialogManager.dialogBox.activeInHierarchy)

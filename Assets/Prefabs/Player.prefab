@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  MovementSpeed: 100
+  MovementSpeed: 5
 --- !u!95 &1319796397374260693
 Animator:
   serializedVersion: 5

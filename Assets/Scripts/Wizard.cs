@@ -13,6 +13,8 @@ public class Wizard : Enemy
     private int remainingCasts;
     public bool shielded;
     public GameObject spell;
+    public GameObject SceneSwitcher;
+    private bool firstDeath = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,10 @@ public class Wizard : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(currentState == EnemyState.dead && firstDeath){
+            SceneSwitcher.SetActive(true);
+            firstDeath = false;
+        }
         CheckDistance();
     }
 
