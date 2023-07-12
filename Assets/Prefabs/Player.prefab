@@ -79,7 +79,7 @@ MonoBehaviour:
   knockTime: 0.4
   playerInventory: {fileID: 0}
   enemyDamage: 0
-  swordSound: {fileID: 0}
+  swordSound: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
   enemySound: {fileID: 0}
   isSpell: 0
 --- !u!1 &1319796396723267681
@@ -161,7 +161,7 @@ MonoBehaviour:
   knockTime: 0.4
   playerInventory: {fileID: 0}
   enemyDamage: 0
-  swordSound: {fileID: 0}
+  swordSound: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
   enemySound: {fileID: 0}
   isSpell: 0
 --- !u!1 &1319796396998968052
@@ -243,7 +243,7 @@ MonoBehaviour:
   knockTime: 0.4
   playerInventory: {fileID: 0}
   enemyDamage: 0
-  swordSound: {fileID: 0}
+  swordSound: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
   enemySound: {fileID: 0}
   isSpell: 0
 --- !u!1 &1319796397374260689
@@ -552,7 +552,7 @@ MonoBehaviour:
   knockTime: 0.4
   playerInventory: {fileID: 0}
   enemyDamage: 0
-  swordSound: {fileID: 0}
+  swordSound: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
   enemySound: {fileID: 0}
   isSpell: 0
 --- !u!1 &1319796397434164031

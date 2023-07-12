@@ -25159,6 +25159,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1319796396551277663, guid: b6dd5d99304cd234880b8a8ee9973255,
+        type: 3}
+      propertyPath: swordSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
+    - target: {fileID: 1319796396723267683, guid: b6dd5d99304cd234880b8a8ee9973255,
+        type: 3}
+      propertyPath: swordSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
+    - target: {fileID: 1319796396998968054, guid: b6dd5d99304cd234880b8a8ee9973255,
+        type: 3}
+      propertyPath: swordSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
     - target: {fileID: 1319796397374260680, guid: b6dd5d99304cd234880b8a8ee9973255,
         type: 3}
       propertyPath: m_RootOrder
@@ -25274,6 +25289,11 @@ PrefabInstance:
       propertyPath: MovementSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1319796397404428109, guid: b6dd5d99304cd234880b8a8ee9973255,
+        type: 3}
+      propertyPath: swordSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62e48d51911a9294aab8284e2a117204, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6dd5d99304cd234880b8a8ee9973255, type: 3}
 --- !u!1 &875749064
