@@ -12,6 +12,7 @@ public class Goblin : Enemy
     public Animator anim;
     public bool isGoblinChief = false;
     public Inventory playerInventory;
+    private bool firstDeath = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,15 @@ public class Goblin : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(currentState == EnemyState.dead && firstDeath)
+        {
+            firstDeath = false;
+            if (isGoblinChief)
+            {
+                playerInventory.forestExamKeys += 1;
+            }
+        }
+        
         CheckDistance();
     }
 
@@ -77,13 +87,5 @@ public class Goblin : Enemy
             currentState = newState;
         }
 
-    }
-
-    private void OnDestroy()
-    {
-        if(isGoblinChief)
-        {
-            playerInventory.forestExamKeys += 1;
-        }
     }
 }

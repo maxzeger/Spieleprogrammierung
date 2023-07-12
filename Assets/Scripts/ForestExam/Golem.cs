@@ -29,6 +29,12 @@ public class Golem : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(currentState == EnemyState.dead && !SceneSwitcher.activeSelf)
+        {
+            inventory.EndExamKeys += 1;
+            UpdateObjectVisibility();
+        }
+
         CheckDistance();
     }
 
@@ -82,11 +88,4 @@ public class Golem : Enemy
     {
         SceneSwitcher.SetActive(true);
     }
-
-    private void OnDestroy()
-    {
-        inventory.EndExamKeys += 1;
-        UpdateObjectVisibility();
-    }
-
 }

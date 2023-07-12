@@ -27,6 +27,14 @@ public class Dragon : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (currentState == EnemyState.dead && !SceneSwitcher.activeSelf)
+        {
+            inventory.EndExamKeys += 1;
+            UpdateObjectVisibility();
+        }
+
+
         CheckDistance();
     }
 
@@ -101,11 +109,5 @@ public class Dragon : Enemy
     private void UpdateObjectVisibility()
     {
         SceneSwitcher.SetActive(true);
-    }
-
-    private void OnDestroy()
-    {
-        inventory.EndExamKeys += 1;
-        UpdateObjectVisibility();
     }
 }
