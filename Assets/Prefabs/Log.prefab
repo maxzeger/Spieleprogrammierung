@@ -176,9 +176,10 @@ MonoBehaviour:
   enemyName: Log
   baseAttack: 1
   moveSpeed: 2
+  invincible: 0
   dropCoin: {fileID: 1907060386625963557, guid: ae4ded6a5ed74431d998845279acef49,
     type: 3}
-  dropCount: 5
+  dropCount: 2
   spawnRadius: 3
   target: {fileID: 0}
   chaseRadius: 4
@@ -229,3 +230,4 @@ MonoBehaviour:
   enemyDamage: 1
   swordSound: {fileID: 0}
   enemySound: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  isSpell: 0

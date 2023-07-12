@@ -175,7 +175,7 @@ MonoBehaviour:
   health: 0
   enemyName: Goblin
   baseAttack: 2
-  moveSpeed: 1
+  moveSpeed: 3
   invincible: 0
   dropCoin: {fileID: 1907060386625963557, guid: ae4ded6a5ed74431d998845279acef49,
     type: 3}
