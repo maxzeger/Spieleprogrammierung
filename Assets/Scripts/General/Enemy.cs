@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator DeathCo(Rigidbody2D myRigidbody){
         GetComponent<Animator>().SetBool("dead", true);
         DropItems();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
     }
 
